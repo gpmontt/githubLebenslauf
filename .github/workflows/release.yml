@@ -11,7 +11,7 @@ jobs:
         with:
           root_file: CurriculumVitae.tex
           compiler: xelatex
-          args: "-pdf -latexoption=-shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode"
+          args: -file-line-error -interaction=nonstopmode
      - name: Check pdf file
         run: |
           file *.pdf | grep -q ' PDF '
