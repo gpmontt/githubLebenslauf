@@ -6,15 +6,9 @@
 
 \usepackage{fontspec} % For loading fonts
 \defaultfontfeatures{Mapping=tex-text}
-%\setmainfont{Segoe UI Semilight} % Main document font
-
 \usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
-
 \usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
 
-\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
-% To reduce the height of the top margin uncomment: \addtolength{\voffset}{-1.3cm}
-\addtolength{\hoffset}{-1cm}
 
 \usepackage{titlesec} % Used to customize the \section command
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
@@ -27,14 +21,13 @@
 \usepackage{fancyhdr, xcolor}
 \fancyhf{} %deletes default header and footer settings
 \renewcommand{\headrulewidth}{0pt} %no header line
-
 \usepackage{fontspec,xltxtra} %fonts and styles in xelatex
 % \setmainfont{Linux Libertine O}
-\usepackage{fontawesome5}
+\usepackage{fontawesome}
 \usepackage{raleway}                      % Load raleway font
 \renewcommand{\familydefault}{\sfdefault} % Set sans serif for document
 
-\fancyhead[C]{\footnotesize{\color{gray}{\faUser \hfil Giovanni Perez Montt \hfil|\hfil \faMapMarker \hfil Aretzstr. 52, 52070 Aachen \hfil|\hfil \faEnvelopeOpen  \hfil giovanni.perez.montt@gmail.com \hfil|\hfil \faPhone \hfil +49 157 72192486 }}}
+\fancyhead[C]{\footnotesize{\color{gray}{\faUser \hfil Giovanni Perez Montt \hfil|\hfil \faMapMarker \hfil Aretzstr. 52, 52070 Aachen \hfil|\hfil \faEnvelope  \hfil giovanni.perez.montt@gmail.com \hfil|\hfil \faPhone \hfil +49 157 72192486 }}}
 
 \usepackage{tikz}
 \usetikzlibrary{positioning,fit,calc}
@@ -42,8 +35,8 @@
 %--------------------------------------------------------------------------------------
 
 \begin{document}
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+% \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
 \pagestyle{fancyplain} %apply customized header to all pages
 \thispagestyle{empty} % no header on this page
@@ -73,11 +66,11 @@
 
 \begin{minipage}[b][5cm][t]{\textwidth}
 \centering\Large
-\textsc{Giovanni Perez Montt}\\
+\textsc{\faUser Giovanni Perez Montt}\\
 \textsc{\faGraduationCap {Elektrotechniker (Diplom)} }\\
 \vspace{0.5cm}
 \textsc{\faMapMarker Aretzstr.  52  \\ 52070 Aachen}\\
-\textsc{ \faEnvelopeOpen giovanni.perez.montt@gmail.com}\\
+\textsc{\faEnvelope giovanni.perez.montt@gmail.com}\\
 \textsc{\faPhone +49 157 5356 9384 }
 \end{minipage}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
@@ -148,6 +141,4 @@ Curriculum Vitae\\ Zeugnisse
 \end{page}
 \pagebreak
 
-
 \end{document}
-

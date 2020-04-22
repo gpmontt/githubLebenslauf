@@ -1,0 +1,5 @@
+dist: bionic
+language: generic
+services: docker
+script:
+- docker run --rm -it -v $(pwd):/home velocitymob/pandocker bash  -pdf 
