@@ -1,0 +1,26 @@
+  
+name: Build LaTeX document
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 1 * *'
+    
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    container:
+      image: velocitymob/pandocker@buster
+      
+    
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - name: Build latex
+      run: |
+        echo 'Funktioniert'
