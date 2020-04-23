@@ -1,5 +1,4 @@
-![(Unnamed workflow)](https://github.com/gpmontt/githublebenslauf/workflows/(Unnamed%20workflow)/badge.svg)
-
+![builddocker](https://github.com/gpmontt/githublebenslauf/workflows/builddocker/badge.svg)
 
 # CV as code 
 
