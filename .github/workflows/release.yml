@@ -13,5 +13,5 @@ jobs:
       - name: Compile basic LaTeX document
         uses: dante-ev/latex-action@master
         with:
-          root_file: CurriculumVitae.tex
+          root_file: Anschreiben.tex
 
