@@ -11,6 +11,8 @@ outputs:
     description: 'The time we greeted you'
 runs:
   using: 'docker'
-  image: 'velocitymob/pandocker:buster'
+  image: 'docker://velocitymob/pandocker:buster'
   args:
-    - echo ${{ inputs.who-to-greet }}
+    - ${{ inputs.who-to-greet }}
+  entrypoint: 
+    - /bin/bash echo ${{ inputs.who-to-greet }}
