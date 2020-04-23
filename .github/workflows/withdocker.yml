@@ -16,7 +16,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:
-      image: velocitymob/pandocker
+      image: velocitymob/pandocker:buster
 
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -26,7 +26,10 @@ jobs:
 
 #     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: echo Hello, world!
+      run: |
+          echo Hello, world!
+          ls /pandoc
+          xelatex -version
 
 #     # Runs a set of commands using the runners shell
 #     - name: Run a multi-line script
