@@ -7,21 +7,21 @@ on:
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    container:
+      image: velocitymob/pandocker:buster
     
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 1
-    - name: package dockerwith
-      uses: docker://velocitymob/pandocker:buster      
-    -  shell: bash
-       
-#       run: |
-#         echo 'Funktioniert'
-#         VERSION=(date +%s)
-#         docker login docker.pkg.github.com --username gpmontt --password ${{ secrets.GITHUB_TOKEN }}
-#         docker pull docker.pkg.github.com/gpmontt/githublebenslauf/pandocker_test:buster
-#         docker run --rm -i -v $(pwd):/pandoc  -w /pandoc -c "xelatex Anschreiben.tex & ls /pandoc"
-         
+    - name: Build latex
+      run: |
+        echo 'Funktioniert'
+        VERSION=(date +%s)
+        docker login docker.pkg.github.com --username gpmontt --password ${{ secrets.GITHUB_TOKEN }}
+        docker pull docker.pkg.github.com/gpmontt/githublebenslauf/pandocker_test:buster
+        docker run --rm -i -v $(pwd):/pandoc  -w /pandoc -c "xelatex Anschreiben.tex & ls /pandoc"
+      
+ 
         
 
