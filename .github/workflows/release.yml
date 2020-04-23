@@ -7,11 +7,15 @@ on:
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v1
-      - name: Compile basic LaTeX document
-        uses: dante-ev/latex-action@master
-        with:
-          root_file: Anschreiben.tex
+    - uses: actions/checkout@v2
+    - name: package dockerwith
+      run: |
+        VERSION=(date +%s)
+         docker login docker.pkg.github.com --username gpmontt --password ${{ secrets.GITHUB_TOKEN }}
+         docker pull docker.pkg.github.com/gpmontt/githublebenslauf/pandocker_test:buster
+         docker run --rm -i -v $(pwd):/pandoc  -w /pandoc -c "xelatex Anschreiben.tex & ls /pandoc"
+         
+        
 
