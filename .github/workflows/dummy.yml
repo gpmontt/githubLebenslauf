@@ -1,0 +1,19 @@
+name: dummy
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do Nothing
+        run: echo "Bye!"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do Nothing
+        run: echo "Bye!"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do Nothing
+        run: echo "Bye!"
