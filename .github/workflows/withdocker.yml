@@ -13,12 +13,22 @@ jobs:
 
     # Those steps are actions, which may run inside a container
     - uses: actions/checkout@v1
-    - uses: ./.github/actions/pandocker/
+    - uses: .github/actions/pandocker/
+    - uses: actions/checkout@v2
+
   container:
     runs-on: ubuntu-latest
-    container: docker://velocitymob/pandocker:buster
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2 
+    container: 
+      image: docker://velocitymob/pandocker:buster
+      workdirectory: /pandoc   
     steps:
       - run: |
+          printenv
+          ls -la /
+          cd /pandoc
           ls -la
           xelatex --version
           echo This job does specify a container.
