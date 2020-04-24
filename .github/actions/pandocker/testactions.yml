@@ -15,4 +15,4 @@ runs:
   args:
     - ${{ inputs.who-to-greet }}
   entrypoint: 
-    - /bin/bash echo ${{ inputs.who-to-greet }}
+    - /bin/bash xelatex --version
