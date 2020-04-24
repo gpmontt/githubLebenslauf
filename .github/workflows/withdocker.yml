@@ -23,6 +23,7 @@ jobs:
           xelatex --version
           xelatex -interaction nonstopmode -halt-on-error -file-line-error Anschreiben.tex
           ls -la
+          xelatex -interaction nonstopmode -halt-on-error -file-line-error CurriculumVitae.tex
         name: Run in container
 
   Release:
@@ -32,7 +33,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Generate Changelog
-        run: echo "# Good things have arrived" > ${{ github.workflow }}-CHANGELOG.txt
+        run: |
+         echo "# Good things have arrived" > ${{ github.workflow }}-CHANGELOG.txt
+         echo
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -40,6 +43,7 @@ jobs:
           body_path: ${{ github.workflow }}-CHANGELOG.txt
           files: |
             Anschreibe.pdf
-            Readme.md
+      #       Readme.md
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOYTOKEN: ${{ secrets.DEPLOYTOKEN }}
+          MYVALUE: ${{ secrets.MYVALUE }}   
