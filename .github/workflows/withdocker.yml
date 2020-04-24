@@ -20,8 +20,8 @@ jobs:
           ls -la / 
           cd $GITHUB_WORKSPACE
           ls -la
-          xelatex --version        
-          xelatex Anschreiben.tex
+          xelatex --version
+          xelatex -interaction nonstopmode -halt-on-error -file-line-error Anschreiben.tex
           ls -la
         name: Run in container
 
