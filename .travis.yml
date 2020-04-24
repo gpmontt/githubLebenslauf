@@ -5,13 +5,12 @@ services:
   - docker
 before_install:
   - docker pull velocitymob/pandocker:buster
-  - docker run -d --name buildvm -it -v $(pwd):/pandoc -w /pandoc velocitymob/pandocker:buster xelatex CurriculumVitae.tex && xelatex Anschreiben.tex
+  - docker run --name buildvm -it -v $(pwd):/pandoc -w /pandoc velocitymob/pandocker:buster xelatex CurriculumVitae.tex && xelatex Anschreiben.tex
   - docker cp buildvm:/pandoc/CurriculumVitae.pdf cv.pdf
   - docker cp buildvm:/pandoc/Anschreiben.pdf Anschreiben.pdf
   - docker ps -a 
   - docker container rm -f buildvm
   
-
 jobs:
   include:
   - stage: run docker
