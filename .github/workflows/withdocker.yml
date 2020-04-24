@@ -18,10 +18,11 @@ jobs:
       - run: |
           printenv
           ls -la / 
-          cd /__w/githublebenslauf/githublebenslauf
+          cd $GITHUB_WORKSPACE
           ls -la
           xelatex --version        
-          ls -al $HOME
+          xelatex Anschreiben.tex
+          ls -la
         name: Run in container
 
     
