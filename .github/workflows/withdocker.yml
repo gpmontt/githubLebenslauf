@@ -3,12 +3,26 @@ name: workflows
 on:
   push:
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # This step checks out a copy of your repository.
-      - uses: actions/checkout@v2
-      # This step references the directory that contains the action.
-      - uses: ./.github/actions/pandocker
+    # Those steps are executed directly on the VM
+    - run: ls /
+    - run: echo $HOME
+
+    # Those steps are actions, which may run inside a container
+    - uses: actions/checkout@v1
+    - uses: ./.github/actions/pandocker/
+  container:
+    runs-on: ubuntu-latest
+    container: docker://velocitymob/pandocker:buster
+    steps:
+      - run: |
+          ls -la
+          xelatex --version
+          echo This job does specify a container.
+          echo It runs in the container instead of the VM.
+        name: Run in container
+
+    
