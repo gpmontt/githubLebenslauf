@@ -6,13 +6,15 @@ services:
 before_install:
   - docker pull velocitymob/pandocker:buster
   
-  
+
 jobs:
   include:
   - stage: run docker
     script:
     - printenv
-    - echo uname_release -a
+    - uname -a
+    - lsb_release -a
     - ls -la
-    - docker run --rm -it -v $(pwd):/home -w /home velocitymob/pandocker:buster -c "xelatex --version" 
-    - ls -la
+    - xelatex --version
+    - pandoc --version
+    - ls -l
