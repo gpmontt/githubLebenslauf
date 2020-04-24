@@ -38,7 +38,8 @@ jobs:
           echo "# Good things have arrived" > ${{ github.workflow }}-CHANGELOG.txt
           printenv
           ls
-        run: echo ${{ github.sha }} > Release.txt
+          echo ${{ github.sha }} > Release.txt
+          
       - name: Test
         run: cat Release.txt
       - name: Release
