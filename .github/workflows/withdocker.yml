@@ -21,12 +21,13 @@ jobs:
     steps:
       - run: |
           printenv
-          ls -la /
-          cd $HOME
+          ls -la / 
+          cd /__w/githublebenslauf/githublebenslauf
           ls -la
           xelatex --version
           echo This job does specify a container.
-          echo It runs in the container instead of the VM.
+          xelatex Anschreiben.tex
+          ls -la
         name: Run in container
 
     
