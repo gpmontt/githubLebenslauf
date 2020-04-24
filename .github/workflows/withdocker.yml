@@ -15,8 +15,8 @@ jobs:
   build:
     - name: check out repository
       uses: actions/checkout@v2
-    - name: Use local my-action
-      uses: ./.github/actions/testactions.yml
+    - name: Use local my action
+      uses: ./.github/actions/testactions
 
 #     # Runs a single command using the runners shell
     - name: Run a one-line script
