@@ -1,5 +1,17 @@
 dist: bionic
-language: generic
-services: docker
-script:
-- docker run --rm -it -v $(pwd):/home velocitymob/pandocker bash  -pdf 
+sudo: required
+
+services: 
+  - docker
+before_install:
+  - docker pull velocitymob/pandocker:buster
+  
+jobs:
+  include:
+  - stage: run docker
+    script:
+    - printenv
+    - echo uname_release -a
+    - ls -la
+    - docker run --rm -it -v $(pwd):/home -w /home velocitymob/pandocker:buster -c "xelatex --version" 
+    - ls -la
