@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2 
     container: 
       image: docker://velocitymob/pandocker:buster
-      workdirectory: /pandoc   
+      workdir: /pandoc   
     steps:
       - run: |
           printenv
