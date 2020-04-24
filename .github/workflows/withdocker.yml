@@ -21,8 +21,7 @@ jobs:
     steps: 
       - name: Checkout
         uses: actions/checkout@v2 
-    container: 
-      image: docker://velocitymob/pandocker:buster  
+    container: docker://velocitymob/pandocker:buster  
     steps:
       - run: |
           printenv
