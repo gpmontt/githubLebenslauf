@@ -22,7 +22,7 @@ jobs:
       - run: |
           printenv
           ls -la /
-          cd /pandoc
+          cd $HOME
           ls -la
           xelatex --version
           echo This job does specify a container.
