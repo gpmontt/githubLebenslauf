@@ -35,15 +35,13 @@ jobs:
       - name: Generate Changelog
         run: |
          echo "# Good things have arrived" > ${{ github.workflow }}-CHANGELOG.txt
-         echo
+         echo ${{ secrets.MYVALUE }}
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           body_path: ${{ github.workflow }}-CHANGELOG.txt
-          files: |
-            Anschreibe.pdf
-      #       Readme.md
+          files: Anschreibe.pdf
         env:
           DEPLOYTOKEN: ${{ secrets.DEPLOYTOKEN }}
           MYVALUE: ${{ secrets.MYVALUE }}   
