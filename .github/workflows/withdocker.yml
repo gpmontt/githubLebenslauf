@@ -15,7 +15,6 @@ jobs:
     container: docker://velocitymob/pandocker:buster
     steps:
       - uses: actions/checkout@v2 
-    steps: 
       - run: |
           printenv
           ls -la / 
