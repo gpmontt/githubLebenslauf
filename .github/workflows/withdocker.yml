@@ -8,26 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # Those steps are executed directly on the VM
-    - run: ls /
-    - run: echo $HOME
-
-    # Those steps are actions, which may run inside a container
-    - uses: actions/checkout@v1
-    - uses: actions/checkout@v2
+    - run: echo $PWD
 
   container:
     runs-on: ubuntu-latest
     container: docker://velocitymob/pandocker:buster
     steps:
+      - uses:actions/checkout@v2 
+    steps: 
       - run: |
           printenv
           ls -la / 
           cd /__w/githublebenslauf/githublebenslauf
           ls -la
-          xelatex --version
-          echo This job does specify a container.
-          xelatex Anschreiben.tex
-          ls -la
+          xelatex --version        
+          ls -al $HOME
         name: Run in container
 
     
