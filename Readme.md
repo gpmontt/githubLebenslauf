@@ -1,4 +1,4 @@
-![builddocker](https://github.com/gpmontt/githublebenslauf/workflows/builddocker/badge.svg)
+![workflows](https://github.com/gpmontt/githublebenslauf/workflows/workflows/badge.svg?branch=master)
 
 # CV as code 
 
